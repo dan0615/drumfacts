@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Drum Facts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #4B0F0F; /* Maroon background */
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .fact-button {
+            padding: 10px 20px;
+            background-color: #000; /* Black button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .fact-button:hover {
+            background-color: #4B0F0F; /* Maroon on hover */
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .share-button {
+            color: #fff; /* White icons */
+            font-size: 24px; /* Adjust size as needed */
+            transition: color 0.3s ease;
+        }
+
+        .share-button:hover {
+            color: #4B0F0F; /* Maroon on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Drum Facts</h1>
+        <div id="fact-display" class="fact-display">Click the button to get a random fact!</div>
+        <button id="fact-button" class="fact-button">Get Random Fact</button>
+        <div class="social-share">
+            <a href="#" class="share-button" id="facebook-share" title="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="share-button" id="twitter-share" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="share-button" id="instagram-share" title="Share on Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="share-button" id="whatsapp-share" title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <script>
+        const facts = [
+            "Drums are one of the oldest musical instruments, dating back over 6,000 years.",
+            "The largest drum in the world is the Great Bass Drum, which measures 10 feet in diameter.",
+            "Drums are classified as percussion instruments, which means they produce sound when struck.",
+            "The snare drum gets its name from the 'snares' (metal wires) that create a sharp sound when the drum is played.",
+            "The bass drum is often used in marching bands and orchestras to provide a strong rhythmic foundation.",
+            "Drummers can burn up to 600 calories per hour while playing, making drumming a great workout!",
+            "The world record for the fastest drummer is held by Mike Mangini, who played 1,208 single strokes in one minute.",
+            "Drums can be made from various materials, including wood, metal, and synthetic materials, each affecting the sound.",
+            "The djembe, a popular African drum, is played with bare hands and can produce a wide range of tones.",
+            "In ancient cultures, drums were often used in rituals and ceremonies to communicate with spirits.",
+            "The term 'drum kit' refers to a collection of drums and cymbals arranged for a single player, typically used in modern music.",
+            "The first recorded use of a drum kit in a band was in the late 19th century.",
+            "Drumming can improve coordination and cognitive skills, making it a beneficial activity for people of all ages.",
+            "The sound of drums can vary significantly based on the type of drumsticks used, the drumhead material, and the tuning.",
+            "Many famous musicians, including Ringo Starr and Buddy Rich, have made significant contributions to the art of drumming."
+        ];
+
+        document.getElementById('fact-button').onclick = function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact-display').innerText = facts[randomIndex];
+        };
+
+        document.getElementById('facebook-share').onclick = function() {
+            const fact = document.getElementById('fact-display').innerText;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fact)}`, '_blank');
+        };
+
+        document.getElementById('twitter-share').onclick = function() {
+            const fact = document.getElementById('fact-display').innerText;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(fact)}`, '_blank');
+        };
+
+        document.getElementById('instagram-share').onclick = function() {
+            alert("Instagram sharing is not supported via URL. Please copy the fact to share.");
+        };
+
+        document.getElementById('whatsapp-share').onclick = function() {
+            const fact = document.getElementById('fact-display').innerText;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(fact)}`, '_blank');
+        };
+    </script>
+</body>
+</html>
