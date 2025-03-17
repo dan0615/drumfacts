@@ -64,21 +64,17 @@
             color: #4B0F0F; /* Maroon on hover */
         }
 
-        /* Added drum images */
-        .drum-images {
+        /* Added drum image */
+        .drum-image {
             display: flex;
             justify-content: center;
             margin-top: 20px;
         }
 
-        .drum-images img {
-            width: 100px; /* Set a fixed width for images */
-            margin: 0 10px; /* Space between images */
-            transition: transform 0.3s ease;
-        }
-
-        .drum-images img:hover {
-            transform: scale(1.1); /* Slight zoom effect on hover */
+        .drum-image img {
+            width: 1024px; /* Set width to maintain aspect ratio */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Responsive design */
         }
     </style>
 </head>
@@ -88,10 +84,8 @@
         <div id="fact-display" class="fact-display">Click the button to get a random fact!</div>
         <button id="fact-button" class="fact-button">Get Random Fact</button>
         
-        <div class="drum-images">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Drum_set.png/800px-Drum_set.png" alt="Drum Set">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Snare_drum.png/800px-Snare_drum.png" alt="Snare Drum">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bass_drum.png/800px-Bass_drum.png" alt="Bass Drum">
+        <div class="drum-image">
+            <img src="drum_img.jpg" alt="Drum Image">
         </div>
 
         <div class="social-share">
@@ -154,4 +148,5 @@
     </script>
 </body>
 </html>
+
 
