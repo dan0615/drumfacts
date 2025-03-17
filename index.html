@@ -11,11 +11,16 @@
             background-color: #000;
             color: #fff;
             text-align: center;
+            padding: 20px; /* Added padding for a larger layout */
         }
 
         .container {
-            margin: 50px auto;
-            max-width: 600px;
+            margin: 0 auto;
+            max-width: 800px; /* Increased max-width for a bigger layout */
+            padding: 20px;
+            border: 2px solid #4B0F0F; /* Added border for elegance */
+            border-radius: 10px;
+            background-color: #1a1a1a; /* Darker background for contrast */
         }
 
         .fact-display {
@@ -24,16 +29,18 @@
             background-color: #4B0F0F; /* Maroon background */
             border-radius: 8px;
             transition: all 0.3s ease;
+            font-size: 1.2em; /* Increased font size for better readability */
         }
 
         .fact-button {
-            padding: 10px 20px;
+            padding: 15px 30px; /* Increased padding for a larger button */
             background-color: #000; /* Black button */
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-size: 1.2em; /* Increased font size for the button */
         }
 
         .fact-button:hover {
@@ -42,18 +49,36 @@
 
         .social-share {
             display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: center; /* Centered the share buttons */
+            margin-top: 40px; /* Increased margin for better spacing */
         }
 
         .share-button {
             color: #fff; /* White icons */
-            font-size: 24px; /* Adjust size as needed */
+            font-size: 28px; /* Increased size for better visibility */
+            margin: 0 10px; /* Added margin between icons */
             transition: color 0.3s ease;
         }
 
         .share-button:hover {
             color: #4B0F0F; /* Maroon on hover */
+        }
+
+        /* Added drum images */
+        .drum-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .drum-images img {
+            width: 100px; /* Set a fixed width for images */
+            margin: 0 10px; /* Space between images */
+            transition: transform 0.3s ease;
+        }
+
+        .drum-images img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
         }
     </style>
 </head>
@@ -62,6 +87,13 @@
         <h1>Random Drum Facts</h1>
         <div id="fact-display" class="fact-display">Click the button to get a random fact!</div>
         <button id="fact-button" class="fact-button">Get Random Fact</button>
+        
+        <div class="drum-images">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Drum_set.png/800px-Drum_set.png" alt="Drum Set">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Snare_drum.png/800px-Snare_drum.png" alt="Snare Drum">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bass_drum.png/800px-Bass_drum.png" alt="Bass Drum">
+        </div>
+
         <div class="social-share">
             <a href="#" class="share-button" id="facebook-share" title="Share on Facebook">
                 <i class="fab fa-facebook-f"></i>
@@ -122,3 +154,4 @@
     </script>
 </body>
 </html>
+
